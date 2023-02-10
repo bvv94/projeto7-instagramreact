@@ -7,8 +7,7 @@ export default function Stories() {
         { imgperfil: "./assets/img/respondeai.svg", nomeperfil: "respondeai" },
         { imgperfil: "./assets/img/nathanwpylestrangeplanet.svg", nomeperfil: "nathanwpylestrangeplanet" },
         { imgperfil: "./assets/img/filomoderna.svg", nomeperfil: "filomoderna" },
-        { imgperfil: "./assets/img/wawawicomics.svg", nomeperfil: "wawawicomics" },
-        { imgperfil: "./assets/img/9gag.svg", nomeperfil: "9gag" }
+        { imgperfil: "./assets/img/wawawicomics.svg", nomeperfil: "wawawicomics" }
     ]
 
     return (

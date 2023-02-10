@@ -1,3 +1,5 @@
+import Post from "./Post"
+
 export default function Posts() {
 
     const posts = [
@@ -28,46 +30,6 @@ export default function Posts() {
             {posts.map((p)=> <Post key={p.nomeperfil} nome={p.nomeperfil} imgpf={p.imgperfil} 
                                 imgp={p.imgpost} imgcurtida={p.imgcurtida} curtidas={p.curtidas}
                                 nomecurtida={p.nomecurtida} curtido={p.curtido} salvo={p.salvo}/>)}
-        </div>
-    )
-}
-
-function Post(props) {
-    return (
-        <div class="post" data-test="post">
-            <div class="topo">
-                <div class="usuario">
-                    <img src={props.imgpf} alt={props.nome} />
-                    {props.nome}
-                </div>
-                <div class="acoes">
-                    <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
-            </div>
-
-            <div class="conteudo">
-                <img data-test="post-image" src={props.imgp} alt="gato-telefone" />
-            </div>
-
-            <div class="fundo">
-                <div class="acoes">
-                    <div>
-                        <ion-icon data-test="like-post" name= {props.curtido ? "heart" : "heart-outline"}></ion-icon>
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                        <ion-icon name="paper-plane-outline"></ion-icon>
-                    </div>
-                    <div>
-                        <ion-icon data-test="save-post" name={props.salvo ? "bookmark" : "bookmark-outline"}></ion-icon>
-                    </div>
-                </div>
-
-                <div class="curtidas">
-                    <img src={props.imgcurtida} alt={props.nomecurtida} />
-                    <div class="texto">
-                        Curtido por <strong>{props.nomecurtida}</strong> e <strong data-test="likes-number">outras {props.curtidas} pessoas</strong>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }
