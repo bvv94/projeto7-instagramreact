@@ -10,7 +10,7 @@ export default function Posts() {
             imgcurtida: "assets/img/respondeai.svg",
             nomecurtida: "respondeai",
             curtidas: 101945,
-            salvo: false,
+            salvo: true,
             curtido: true
         },
         {
@@ -21,7 +21,7 @@ export default function Posts() {
             nomecurtida: "adorable_animals",
             curtidas: 157935,
             salvo: true,
-            curtido: false
+            curtido: true
         }
     ]
 

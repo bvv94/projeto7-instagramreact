@@ -2,9 +2,12 @@ import { useState } from "react"
 
 export default function Post(props) {
 
-    const [sal, setSal] = useState("false")
-    const [curt, setCurt] = useState("false")
+    const [sal, setSal] = useState("bookmark-outline")
+    const [curt, setCurt] = useState("heart-outline")
+    const [cor, setCor] = useState("")
 
+
+    console.log(props)
     return (
         <div class="post" data-test="post">
             <div class="topo">
@@ -24,12 +27,12 @@ export default function Post(props) {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon data-test="like-post" onClick={() => Curtir(props.curtido)} name= {props.curtido ? "heart" : "heart-outline"}></ion-icon>
+                        <ion-icon class={cor} data-test="like-post" onClick={() => Curtir()} name= {curt}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon data-test="save-post" name={props.salvo ? "bookmark" : "bookmark-outline"}></ion-icon>
+                        <ion-icon data-test="save-post" onClick={()=> Salvar()} name={sal}></ion-icon>
                     </div>
                 </div>
 
@@ -43,14 +46,27 @@ export default function Post(props) {
         </div>
     )
 
-function Curtir(curtiu){
-    // {curtiu ? false : true}
+function Curtir(){
+   
     console.log("entrou curtir")
-    if(curtiu){
-        setCurt(false)
+    console.log(curt)
+
+    if(curt === "heart-outline"){
+        setCurt("heart")
+        setCor("vermelho")
     }
-    else{
-        setCurt(true)
+    else {
+        setCurt("heart-outline")
+        setCor("")
+    }
+}
+
+function Salvar(){
+    if(sal === "bookmark-outline"){
+        setSal("bookmark")
+    }
+    else {
+        setSal("bookmark-outline")
     }
 }
 
