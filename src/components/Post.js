@@ -5,6 +5,7 @@ export default function Post(props) {
     const [sal, setSal] = useState("bookmark-outline")
     const [curt, setCurt] = useState("heart-outline")
     const [cor, setCor] = useState("")
+    let [nCurt, setnCurt] = useState(11456)
 
 
     console.log(props)
@@ -39,14 +40,14 @@ export default function Post(props) {
                 <div class="curtidas">
                     <img src={props.imgcurtida} alt={props.nomecurtida} />
                     <div class="texto">
-                        Curtido por <strong>{props.nomecurtida}</strong> e <strong data-test="likes-number">outras {props.curtidas} pessoas</strong>
+                        Curtido por <strong>{props.nomecurtida}</strong> e <strong data-test="likes-number">outras {nCurt} pessoas</strong>
                     </div>
                 </div>
             </div>
         </div>
     )
 
-function Curtir(){
+function Curtir(curtidas){
    
     console.log("entrou curtir")
     console.log(curt)
@@ -54,10 +55,12 @@ function Curtir(){
     if(curt === "heart-outline"){
         setCurt("heart")
         setCor("vermelho")
+        setnCurt (nCurt + 1)
     }
     else {
         setCurt("heart-outline")
         setCor("")
+        setnCurt (nCurt - 1)
     }
 }
 
